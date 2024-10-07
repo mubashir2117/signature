@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Signature Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px 60px;
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 5px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 2px solid #000000;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .signature {
+            margin-top: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #000000;
+        }
+
+        .signature-box {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 30px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            button {
+                font-size: 18px;
+                padding: 12px 25px;
+            }
+
+            .signature {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .signature {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Auto Signature Generator</h1>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="generateSignature()">Signature</button>
+        <div class="signature-box">
+            <p>Signed by,</p>
+            <div class="signature" id="signatureOutput">Your signature</div>
+        </div>
+    </div>
+
+    <script>
+        function generateSignature() {
+            var name = document.getElementById("nameInput").value;
+            var signatureOutput = document.getElementById("signatureOutput");
+
+            if (name) {
+                signatureOutput.textContent = name;
+            } else {
+                signatureOutput.textContent = "Your signature";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
